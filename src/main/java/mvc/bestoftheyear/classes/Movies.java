@@ -30,13 +30,9 @@ public class Movies {
     this.titolo = titolo;
   }
 
-  @Bean
-  public List<Movies> movieslists() {
-    return List.of(
-        new Movies(1, "HarryPotter"),
-        new Movies(2, "Creed"),
-        new Movies(3, "FastAndFurious"));
-
+  @Override
+  public String toString() {
+    return "id=" + id + ", titolo=" + titolo;
   }
 
 }

@@ -25,4 +25,9 @@ public class Songs {
     this.titolo = titolo;
   }
 
+  @Override
+  public String toString() {
+    return "id=" + id + ", titolo=" + titolo;
+  }
+
 }

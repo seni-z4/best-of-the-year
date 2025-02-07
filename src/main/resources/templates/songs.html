@@ -12,11 +12,11 @@
     />
   </head>
   <body>
-    <!-- <p th:text="'all the movies names ' + ${movies}"></p> -->
+    <!-- <p th:text="'all the movies names ' + ${songs}"></p> -->
 
     <ul>
-      <li th:each="movie : ${movies}">
-        <span th:text="${movie.titolo}"></span>
+      <li th:each="song : ${songs}">
+        <span th:text="${song.titolo}"></span>
       </li>
     </ul>
   </body>

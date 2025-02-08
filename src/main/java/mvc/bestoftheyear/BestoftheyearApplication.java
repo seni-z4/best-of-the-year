@@ -17,20 +17,4 @@ public class BestoftheyearApplication {
 
 	}
 
-	// @Bean
-	// public List<Movies> movieslists() {
-	// return List.of(
-	// new Movies(1, "HarryPotter"),
-	// new Movies(2, "Creed"),
-	// new Movies(3, "FastAndFurious"));
-	// }
-
-	// @Bean
-	// public List<Songs> Songlists() {
-	// return List.of(
-	// new Songs(1, "HighestDebut"),
-	// new Songs(2, "DieWithASmile"),
-	// new Songs(3, "Dtmf"));
-	// }
-
 }

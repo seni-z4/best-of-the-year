@@ -11,7 +11,38 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <p th:text="homepage"></p>
+  <body class="container center">
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="nav-link disabled me-5" href="#">Best of</a>
+          </li>
+          <li class="nav-item me-3">
+            <div
+              th:insert="fragments/fragments :: buttonmovie(link='/movies' , titolo='Movies')"
+            ></div>
+          </li>
+          <li class="nav-item">
+            <div
+              th:insert="fragments/fragments :: buttonsong(link='/songs' , titolo='Songs')"
+            ></div>
+          </li>
+        </ul>
+      </div>
+      <h2 class="pt-4" th:text="'best of by Seniya'"></h2>
+      <div class="card align-self-center mt-5 mb-5" style="width: 18rem">
+        <img th:src="@{/hp.webp}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">songs & movies</h5>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
+            fugit cumque corporis ipsam magnam omnis minus mollitia, aliquid est
+            provident laborum, quidem accusantium sit dolores iusto aliquam
+            voluptate, nisi autem.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

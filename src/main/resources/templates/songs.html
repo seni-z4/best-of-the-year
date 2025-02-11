@@ -11,13 +11,39 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <!-- <p th:text="'all the movies names ' + ${songs}"></p> -->
 
-    <ul>
-      <li th:each="song : ${songs}">
-        <span th:text="${song.titolo}"></span>
-      </li>
-    </ul>
+  <body class="container center">
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="nav-link disabled me-5" href="#">Best of</a>
+          </li>
+          <li class="nav-item me-3">
+            <div
+              th:insert="fragments/fragments :: buttonmovie(link='/movies' , titolo='Movies')"
+            ></div>
+          </li>
+          <li class="nav-item">
+            <div
+              th:insert="fragments/fragments :: buttonsong(link='/songs' , titolo='Songs')"
+            ></div>
+          </li>
+        </ul>
+      </div>
+      <h2 class="pt-4" th:text="'Best Songs'"></h2>
+
+      <div class="container" style="width: 15rem">
+        <table class="table table-bordered border-primary">
+          <tr th:each="song : ${songs}">
+            <td th:text="${song.titolo}"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div
+        th:insert="fragments/fragments :: buttonhome(link = '/' , titolo = 'HomePage')"
+      ></div>
+    </div>
   </body>
 </html>

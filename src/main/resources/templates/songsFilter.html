@@ -11,13 +11,34 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <!-- <p th:text="'all the movies names ' + ${songs}"></p> -->
 
-    <div th:each="songs : ${songs}">
-      <div th:if="${songs.id} == ${currentSong}">
-        <p th:text="'the song id is ' + ${songs.id}"></p>
-        <p th:text="'the song title is ' + ${songs.titolo}"></p>
+  <body class="container center">
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="nav-link disabled me-5" href="#">Best of</a>
+          </li>
+          <li class="nav-item me-3">
+            <div
+              th:insert="fragments/fragments :: buttonmovie(link='/movies' , titolo='Movies')"
+            ></div>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary active">Songs</a>
+          </li>
+        </ul>
+      </div>
+      <h2 class="pt-4" th:text="'Best Movies'"></h2>
+
+      <div class="container">
+        <table class="table table-bordered border-primary">
+          <tr th:each="songs : ${songs}">
+            <div th:if="${songs.id} == ${currentSong}">
+              <p th:text="'the song title is : ' + ${songs.titolo}"></p>
+            </div>
+          </tr>
+        </table>
       </div>
     </div>
   </body>

@@ -11,11 +11,36 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <div th:each="movie : ${movies}">
-      <div th:if="${movie.id} == ${currentMovie}">
-        <p th:text="'Movie id :' + ${movie.id}"></p>
-        <p th:text="'Movie title :' + ${movie.titolo}"></p>
+
+  <body class="container center">
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="nav-link disabled me-5" href="#">Best of</a>
+          </li>
+          <li class="nav-item me-3">
+            <div
+              th:insert="fragments/fragments :: buttonmovie(link='/movies' , titolo='Movies')"
+            ></div>
+          </li>
+          <li class="nav-item">
+            <div
+              th:insert="fragments/fragments :: buttonsong(link='/songs' , titolo='Songs')"
+            ></div>
+          </li>
+        </ul>
+      </div>
+      <h2 class="pt-4" th:text="'Best Movies'"></h2>
+
+      <div class="container">
+        <table class="table table-bordered border-primary">
+          <tr th:each="movie : ${movies}">
+            <div th:if="${movie.id} == ${currentMovie}">
+              <p th:text="'Movie title : ' + ${movie.titolo}"></p>
+            </div>
+          </tr>
+        </table>
       </div>
     </div>
   </body>
